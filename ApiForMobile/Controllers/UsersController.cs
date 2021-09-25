@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ApiForMobile.Controllers
 {
-    [Route("api/v1/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
     {
@@ -47,8 +47,8 @@ namespace ApiForMobile.Controllers
                 }
             }
         }
-        [HttpGet("{id}")]
-        public IActionResult GetUserById([FromRoute] int id)
+        [HttpGet("GetUserById")]
+        public IActionResult GetUserById([FromQuery]int id)
         {
             using (DatabaseContext context = new DatabaseContext())
             {
